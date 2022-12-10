@@ -24,4 +24,4 @@ stages:          # List of stages for jobs, and their order of execution
 build-job:       # This job runs in the build stage, which runs first.
   stage: build
   script:
-    - mysql --user rfamro --host mysql-rfam-public.ebi.ac.uk --port 4497 --database Rfam < ./SF/sf.sql
+    - mysql --user rfamro --host mysql-rfam-public.ebi.ac.uk --port 4497 --database Rfam < /home/gitlab-runner/builds/e8Pkg8WE/0/sf93/SF/sf.sql
