@@ -18,10 +18,9 @@
 
 stages:          # List of stages for jobs, and their order of execution
   - build
-  - test
-  - deploy
 
 build-job:       # This job runs in the build stage, which runs first.
   stage: build
   script:
-    - mysql --user rfamro --host mysql-rfam-public.ebi.ac.uk --port 4497 --database Rfam < /home/gitlab-runner/builds/e8Pkg8WE/0/sf93/SF/sf.sql
+    - sudo docker run -d --name docker-nginx -p 9889:80 nginx -v /home/gitlab-runner/builds/e8Pkg8WE/0/sf93/SF/index.html
+    - curl http://158.160.48.198:9889/
