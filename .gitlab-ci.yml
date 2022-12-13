@@ -6,5 +6,5 @@ build-job:       # This job runs in the build stage, which runs first.
   tags: 
      - vm1
   script:
-    - docker run -d --name docker-nginx -p 80:8080 nginx
+    - docker run -d --name docker-nginx1 -p 80:8080 nginx
     - curl -I http://158.160.48.198:9889/ 2>/dev/null | head -n 1 | cut -d$' ' -f2
