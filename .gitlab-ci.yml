@@ -9,7 +9,7 @@ build-job:       # This job runs in the build stage, which runs first.
   script:
     - docker run -d --name docker-nginx -p 9889:80 nginx
     - docker cp /etc/systemd/system/builds/P7XwTsq_/0/sf93/SF/index.html docker-nginx:/usr/share/nginx/html/
-
+    - docker restart docker-nginx
 
 testing:       # This job runs in the test stage, which runs first.
   stage: test
