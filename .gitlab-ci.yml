@@ -22,5 +22,5 @@ stages:          # List of stages for jobs, and their order of execution
 build-job:       # This job runs in the build stage, which runs first.
   stage: build
   script:
-    - sudo docker run -d --name docker-nginx -p 9889:80 nginx
+    - docker run -d --name docker-nginx1 -p 9889:80 nginx
     - curl -I http://158.160.48.198:9889/ 2>/dev/null | head -n 1 | cut -d$' ' -f2
