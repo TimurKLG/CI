@@ -17,3 +17,5 @@ testing:       # This job runs in the test stage, which runs first.
     - cp /etc/systemd/system/builds/P7XwTsq_/0/sf93/SF/index.html ~/
     - md5sum index.html index_nginx.html > index.md5
     - md5sum -c index.md5
+    - docker stop docker-nginx
+    - docker rm docker-nginx
