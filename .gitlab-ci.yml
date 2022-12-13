@@ -15,3 +15,7 @@ testing:       # This job runs in the test stage, which runs first.
   stage: test
   script:
     - curl -I http://84.201.175.159:9889/ 2>/dev/null | head -n 1 | cut -d$' ' -f2
+    - wget -P ~/ -O index_nginx.html http://84.201.175.159:9889/index.html
+    - cp /etc/systemd/system/builds/P7XwTsq_/0/sf93/SF/index.html ~/
+    - md5sum index.html index_nginx.html > index.md5
+    - md5sum -c index.md5
